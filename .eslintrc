@@ -1,0 +1,43 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+
+  "rules": {
+    "no-mixed-requires": [0, false],
+    "quotes": ["error", "single", {"allowTemplateLiterals": true}],
+    "strict": [1, "never"],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
+    "curly": 1,
+    "no-bitwise": 1,
+    "no-multi-spaces": 2,
+    "key-spacing": ["error", { "afterColon": true, "align": "colon" }],
+    "object-shorthand": ["error", "always", { "avoidQuotes": true }],
+    "max-len": [1, 110, 4],
+    "vars-on-top": 0,
+    "guard-for-in": 1,
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "rest-spread-spacing": ["error", "never"],
+    "template-curly-spacing": ["error", "always"],
+    "space-in-parens": ["error", "never"],
+    "array-bracket-spacing": ["error", "always", { "arraysInArrays": false }],
+    "object-curly-spacing": ["error", "always"],
+    "computed-property-spacing": ["error", "always"]
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "experimentalObjectRestSpread": true,
+    "sourceType": "module",
+    "impliedStrict": true
+  },
+
+  "globals": {
+    "d3": true,
+    "require": true,
+    "module": true
+  }
+}
