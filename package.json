@@ -30,7 +30,7 @@
     "properties": "^1.2.1"
   },
   "peerDependencies": {
-    "microjs": "git+ssh://git@gitlab.com:microjs/microjs.git"
+    "microjs": "gitlab:microjs/microjs"
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",
