@@ -14,9 +14,8 @@ var _configClientToObject2 = _interopRequireDefault(_configClientToObject);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var clients = _config2.default.get('clients');
-
 exports.default = function (micro) {
+  var clients = _config2.default.get('clients');
 
   Object.keys(clients).forEach(function (name) {
     return micro.client((0, _configClientToObject2.default)(name));
