@@ -15,9 +15,9 @@ exports.default = function () {
 
 
   Object.keys(config).forEach(function (key) {
-    if ((0, _lodash2.default)(config[key])) {
-      config[key] = config[key].trim();
-    }
+    // if (isString(config[ key ])) {
+    //   config[ key ] = config[ key ].trim();
+    // }
   });
 
   return config;
