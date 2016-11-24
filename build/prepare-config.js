@@ -14,9 +14,9 @@ exports.default = function () {
   var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 
-  Object.keys(options).forEach(function (key) {
-    if ((0, _lodash2.default)(options[key])) {
-      options[key] = options[key].trim();
+  Object.keys(config).forEach(function (key) {
+    if ((0, _lodash2.default)(config[key])) {
+      config[key] = config[key].trim();
     }
   });
 

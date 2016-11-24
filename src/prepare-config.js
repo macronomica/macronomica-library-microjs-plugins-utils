@@ -3,10 +3,10 @@ import isString from 'lodash.isstring';
 export default (config = {}) => {
 
   Object
-    .keys(options)
+    .keys(config)
     .forEach(key => {
-      if (isString(options[ key ])) {
-        options[ key ] = options[ key ].trim();
+      if (isString(config[ key ])) {
+        config[ key ] = config[ key ].trim();
       }
     });
 
