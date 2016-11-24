@@ -1,10 +1,11 @@
 import config from 'config';
 import DBMigrate from 'db-migrate';
+import prepareConfig from './prepare-config';
 const { NODE_ENV } = process.env;
 
 //specify an own callback, to handle errors on your side of the application.
 export default (migrationsDir) => {
-  let { driver, host, port, username, password, database } = config.get('db');
+  let { driver, host, port, username, password, database } = prepareConfig(config.get('db'));
   
   switch (driver) {
     case 'postgres': driver = 'pg';

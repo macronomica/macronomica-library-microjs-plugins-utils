@@ -1,7 +1,8 @@
 import config from 'config';
+import prepareConfig from './prepare-config';
 
 export default () => {
-  const dbOptions = config.has('db') ? config.get('db') : null;
+  const dbOptions = config.has('db') ? prepareConfig(config.get('db')) : null;
   
   if (dbOptions === null) {
     throw new Error([
@@ -19,6 +20,6 @@ export default () => {
   if (dbOptions.driver !== 'postgres') {
     throw new Error(`Драйвер бд ${ dbOptions.driver } не поддрживается`);
   }
-  
+
   return dbOptions;
 };

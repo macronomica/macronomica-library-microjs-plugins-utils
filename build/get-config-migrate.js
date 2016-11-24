@@ -12,6 +12,10 @@ var _dbMigrate = require('db-migrate');
 
 var _dbMigrate2 = _interopRequireDefault(_dbMigrate);
 
+var _prepareConfig2 = require('./prepare-config');
+
+var _prepareConfig3 = _interopRequireDefault(_prepareConfig2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -21,13 +25,13 @@ var NODE_ENV = process.env.NODE_ENV;
 //specify an own callback, to handle errors on your side of the application.
 
 exports.default = function (migrationsDir) {
-  var _config$get = _config3.default.get('db'),
-      driver = _config$get.driver,
-      host = _config$get.host,
-      port = _config$get.port,
-      username = _config$get.username,
-      password = _config$get.password,
-      database = _config$get.database;
+  var _prepareConfig = (0, _prepareConfig3.default)(_config3.default.get('db')),
+      driver = _prepareConfig.driver,
+      host = _prepareConfig.host,
+      port = _prepareConfig.port,
+      username = _prepareConfig.username,
+      password = _prepareConfig.password,
+      database = _prepareConfig.database;
 
   switch (driver) {
     case 'postgres':

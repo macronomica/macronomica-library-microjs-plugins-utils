@@ -8,10 +8,14 @@ var _config = require('config');
 
 var _config2 = _interopRequireDefault(_config);
 
+var _prepareConfig = require('./prepare-config');
+
+var _prepareConfig2 = _interopRequireDefault(_prepareConfig);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function () {
-  var dbOptions = _config2.default.has('db') ? _config2.default.get('db') : null;
+  var dbOptions = _config2.default.has('db') ? (0, _prepareConfig2.default)(_config2.default.get('db')) : null;
 
   if (dbOptions === null) {
     throw new Error(['Отсутвуют свойства в конфигурации:', '[db]', 'driver   = postgres', 'host     = 127.0.0.1', 'port     = 5432', 'database = macronomica-local', 'username = postgres', 'password = postgres'].join('\r'));

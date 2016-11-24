@@ -1,7 +1,8 @@
 import config from 'config';
+import prepareConfig from './prepare-config';
 
 export default () => {
-  const listenOptions = config.has('server') ? config.get('server') : null;
+  const listenOptions = config.has('server') ? prepareConfig(config.get('server')) : null;
   
   if (listenOptions === null) {
     throw new Error([
