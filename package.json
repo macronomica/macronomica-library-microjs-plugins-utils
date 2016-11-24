@@ -1,6 +1,6 @@
 {
   "name": "@microjs/microjs-plugins-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "Плагин Microjs с разными утилитными методами",
   "main": "index.js",
